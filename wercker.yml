@@ -4,4 +4,4 @@ build:
     - pip-install
     - script:
         name: flask tests
-        code: nosetests
+        code: python test_app.py
