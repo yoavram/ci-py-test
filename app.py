@@ -9,7 +9,6 @@ import os
 import re
 from datetime import timedelta, datetime
 from flask import Flask,  jsonify
-from flask_sslify import SSLify
 import logging
 
 # add environment variables using 'heroku config:add VARIABLE_NAME=variable_name'
@@ -30,15 +29,11 @@ if app.debug:
 	app.logger.info('Running in debug mode')
 else:
 	app.logger.info('Running in prod mode')
-if not app.config['RESOURCE_FILEPATH']:
-	app.logger.error('RESOURCE_FILEPATH config var is missing')
 
 
-# services
-sslify = SSLify(app)
 @app.route('/')
 def root():
-	return jsonify(result=success)
+	return jsonify(result="success")
 
 
 if __name__=='__main__':
