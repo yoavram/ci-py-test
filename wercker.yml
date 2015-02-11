@@ -1,8 +1,7 @@
-# from http://devcenter.wercker.com/articles/languages/python/flask.html
 box: wercker/python
-    build:
-      steps:
-        - pip-install
-        - script:
-            name: flask tests
-            code: nosetests
+build:
+  steps:
+    - pip-install
+    - script:
+        name: flask tests
+        code: python app_test.py
